@@ -16,16 +16,16 @@ sources:
       error_after: {count: 48, period: hour}
 
     tables:
-      - name: events 
-        loaded_at_field: created_at
-
-      - name: orders 
-        loaded_at_field: created_at
-
       - name: addresses 
         loaded_at_field: created_at
 
       - name: users 
+        loaded_at_field: created_at
+
+      - name: events 
+        loaded_at_field: created_at
+
+      - name: orders 
         loaded_at_field: created_at
 
       - name: products 

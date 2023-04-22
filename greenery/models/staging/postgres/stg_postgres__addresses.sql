@@ -8,7 +8,7 @@
 select 
     address_id,
     address,
-    zipcode,
+    zip_code,
     state,
     country
-from {{ ref('postgres', 'base_postgres__addresses') }}
+from {{ ref('base_postgres__addresses') }}

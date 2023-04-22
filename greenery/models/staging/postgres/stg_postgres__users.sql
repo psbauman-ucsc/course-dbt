@@ -13,7 +13,7 @@ select
     u.phone_number,
     u.address_id,
     a.address,
-    a.zipcode,
+    a.zip_code,
     a.state,
     a.country
   

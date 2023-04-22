@@ -18,7 +18,7 @@ models:
       - name: zip_code
       - name: tracking_id
       - name: shipping_service
-      - name: estimated_at
+      - name: estimated_delivery_at
       - name: delivered_at
       - name: estimated_days
       - name: delivery_days

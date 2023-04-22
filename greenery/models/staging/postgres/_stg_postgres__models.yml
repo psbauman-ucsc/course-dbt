@@ -1,6 +1,7 @@
 version: 2
 
 models:
+ 
   - name: stg_postgres__events
     description: greenery events
     columns:
@@ -89,7 +90,7 @@ models:
     columns:
       - name: address_id
       - name: address
-      - name: zipcode
+      - name: zip_code
       - name: state
       - name: country
   
@@ -101,9 +102,11 @@ models:
       - name: last_name
       - name: email
       - name: phone_number
-      - name: created_at
-      - name: updated_at
       - name: address_id
+      - name: address
+      - name: zip_code
+      - name: state
+      - name: country
  
   - name: stg_postgres__products
     description: greenery products

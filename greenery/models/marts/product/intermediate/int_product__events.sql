@@ -12,18 +12,15 @@ select
   e.order_id,
   e.product_id,
   e.event_type,
-  e.event_at,
   e.page_url,  
   u.country,
   u.state,
   u.zip_code,
   o.tracking_id,
   o.shipping_service,
-  o.estimated_at,
-  o.delivered_at,
-  o.estimated_days,
-  o.delivery_days
-  
+  o.estimated_delivery_at,
+  o.delivered_at
+    
 from {{ ref('stg_postgres__events') }} as e
 
 left join {{ ref('stg_postgres__users') }} as u

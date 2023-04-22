@@ -1,6 +1,6 @@
 version: 2
 
-models:  
+models:
   - name: base_postgres__users
     description: greenery users
     columns:
@@ -43,7 +43,7 @@ models:
       - name: address
         tests:
           - not_null
-      - name: zipcode
+      - name: zip_code
         tests:
           - not_null
       - name: state
