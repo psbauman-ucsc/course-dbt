@@ -11,4 +11,4 @@ select
     zipcode,
     state,
     country
-from {{ ref('postgres', 'base_addresses') }}
+from {{ ref('postgres', 'base_postgres__addresses') }}
