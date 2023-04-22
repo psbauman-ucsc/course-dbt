@@ -1,13 +1,14 @@
 {{
   config(
+    enabled=true,
     materialized='view'
   )
 }}
 
-SELECT 
+select 
     address_id,
     address,
     zipcode,
     state,
     country
-FROM {{ source('postgres', 'base_addresses') }}
+from {{ ref('postgres', 'base_addresses') }}
