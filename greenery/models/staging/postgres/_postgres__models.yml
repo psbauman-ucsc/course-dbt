@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_events
+  - name: stg_postgres__events
     description: greenery events
     columns:
       - name: event_id
@@ -15,7 +15,7 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('stg_users')
+              to: ref('stg_postgres__users')
               field: user_id          
       - name: page_url
         tests:
@@ -29,15 +29,15 @@ models:
       - name: order_id
         tests:
           - relationships:
-              to: ref('stg_orders')
+              to: ref('stg_postgres__orders')
               field: order_id          
       - name: product_id
         tests:
           - relationships:
-              to: ref('stg_products')
+              to: ref('stg_postgres__products')
               field: product_id       
                  
-  - name: stg_orders
+  - name: stg_postgres__orders
     description: greenery orders
     columns:
       - name: order_id
@@ -48,18 +48,18 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('stg_users')
+              to: ref('stg_postgres__users')
               field: user_id          
       - name: promo_id
         tests:
           - relationships:
-              to: ref('stg_promos')
+              to: ref('stg_postgres__promos')
               field: promo_id
       - name: address_id      
         tests:
           - not_null
           - relationships:
-              to: ref('stg_addresses')
+              to: ref('stg_postgres__addresses')
               field: address_id
       - name: created_at
         tests:
@@ -84,7 +84,7 @@ models:
         tests:
           - not_null
 
-  - name: stg_addresses
+  - name: stg_postgres__addresses
     description: addresses for greenery users (one to one relationship)
     columns:
       - name: address_id
@@ -104,7 +104,7 @@ models:
         tests:
           - not_null
   
-  - name: stg_users
+  - name: stg_postgres__users
     description: greenery users
     columns:
       - name: user_id
@@ -133,10 +133,10 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('stg_addresses')
+              to: ref('stg_postgres__addresses')
               field: address_id          
  
-  - name: stg_products
+  - name: stg_postgres__products
     description: greenery products
     columns:
       - name: product_id
@@ -155,27 +155,27 @@ models:
           - not_null
           - positive_values
           
-  - name: stg_order_items 
+  - name: stg_postgres__order_items 
     description: child product items under each greenery order
     columns:
       - name: order_id
         tests:
           - not_null
           - relationships:
-              to: ref('stg_orders')
+              to: ref('stg_postgres__orders')
               field: order_id
       - name: product_id
         tests:
           - not_null
           - relationships:
-              to: ref('stg_products')
+              to: ref('stg_postgres__products')
               field: product_id
       - name: quantity
         tests:
           - not_null
           - positive_values          
   
-  - name: stg_promos 
+  - name: stg_postgres__promos 
     description: greenery promos used in orders
     columns:
       - name: promo_id
