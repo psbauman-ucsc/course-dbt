@@ -1,0 +1,54 @@
+version: 2
+
+models:  
+  - name: base_postgres__users
+    description: greenery users
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        tests:
+          - not_null
+      - name: last_name
+        tests:
+          - not_null
+      - name: email
+        tests:
+          - not_null
+      - name: phone_number
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+      - name: updated_at
+        tests:
+          - not_null
+      - name: address_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('base_postgres__addresses')
+              field: address_id
+
+  - name: base_postgres__addresses
+    description: addresses for greenery users (one to one relationship)
+    columns:
+      - name: address_id
+        tests:
+          - unique
+          - not_null
+      - name: address
+        tests:
+          - not_null
+      - name: zipcode
+        tests:
+          - not_null
+      - name: state
+        tests:
+          - not_null
+      - name: country
+        tests:
+          - not_null

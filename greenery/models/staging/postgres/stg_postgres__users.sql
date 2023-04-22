@@ -1,16 +1,22 @@
 {{
   config(
+    enabled=true,
     materialized='view'
   )
 }}
 
-SELECT 
-    user_id,
-    first_name,
-    last_name,
-    email,
-    phone_number,
-    created_at,
-    updated_at,
-    address_id
-FROM {{ source('postgres', 'users') }}
+select
+    u.user_id,
+    u.first_name,
+    u.last_name,
+    u.email,
+    u.phone_number,
+    u.address_id,
+    a.address,
+    a.zipcode,
+    a.state,
+    a.country
+  
+from {{ ref('base_postgres__users') }} as u
+left join {{ ref('base_postgres__addresses') }} as a
+  on u.address_id = a.address_id

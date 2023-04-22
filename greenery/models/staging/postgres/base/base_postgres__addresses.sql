@@ -10,4 +10,4 @@ SELECT
     zipcode,
     state,
     country
-FROM {{ source('postgres', 'base_addresses') }}
+FROM {{ source('postgres', 'addresses') }}

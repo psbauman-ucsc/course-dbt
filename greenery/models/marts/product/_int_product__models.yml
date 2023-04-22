@@ -1,0 +1,24 @@
+version: 2
+
+models:
+
+  - name: int_product__events
+    description: 'Expanded events table with order & user data'
+    columns:
+      - name: event_id
+      - name: user_id
+      - name: session_id
+      - name: order_id
+      - name: product_id
+      - name: event_type
+      - name: event_at
+      - name: page_url  
+      - name: country
+      - name: state
+      - name: zip_code
+      - name: tracking_id
+      - name: shipping_service
+      - name: estimated_at
+      - name: delivered_at
+      - name: estimated_days
+      - name: delivery_days
