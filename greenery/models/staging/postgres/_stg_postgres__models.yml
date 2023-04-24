@@ -32,9 +32,11 @@ models:
           - not_null
       - name: order_id
         tests:
+          - events__test_order_id_not_null
           - relationships:
               to: ref('stg_postgres__orders')
               field: order_id          
+
       - name: product_id
         tests:
           - relationships:
