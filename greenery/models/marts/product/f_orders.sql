@@ -7,10 +7,10 @@
 
 select distinct
 
-  v.user_id,
-  v.session_id,
-  v.order_id,
-  v.product_id,
+  e.user_id,
+  e.session_id,
+  e.order_id,
+  e.product_id,
   v.created_date as page_view_date,
   v.created_hour as page_view_hour,
   v.page_url as page_view_url,
