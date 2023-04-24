@@ -16,7 +16,6 @@ models:
   - name: int_core__events_shipped
     description: Ship events
     columns:
-
       - name: event_id
       - name: user_id
       - name: session_id
@@ -28,9 +27,7 @@ models:
   - name: int_core__orders
     description: Orders
     columns:
-
       - name: user_id
-      - name: session_id
       - name: order_id
       - name: order_date
       - name: order_total

@@ -36,8 +36,7 @@ models:
 
       - name: order_id
       - name: user_id
-      - name: product_id
       - name: order_date
-      - name: order_cost
+      - name: order_total
       - name: status
 

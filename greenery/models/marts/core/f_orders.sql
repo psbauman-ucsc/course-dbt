@@ -8,7 +8,6 @@
 select
 
   o.user_id,
-  o.session_id,
   o.order_id,
   c.created_date as checkout_date,
   c.created_hour as checkout_hour,
@@ -26,9 +25,8 @@ select
 from {{ ref('int_core__orders') }} as o
 
 left outer join {{ ref('int_core__events_checkout') }} as c
- on c.user_id = o.user_id
-and c.session_id = o.session_id
+ on c.order_id = o.order_id
 
 left outer join {{ ref('int_core__events_shipped') }} as s
- on s.user_id = o.user_id
-and s.session_id = o.session_id
+ on s.order_id = o.order_id
+

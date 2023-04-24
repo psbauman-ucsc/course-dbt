@@ -6,14 +6,13 @@
 }}
 
 select
-  o.user_id,
-  o.session_id,
-  o.order_id,
-  o.created_at as order_date
-  o.order_total,
-  o.tracking_id,
-  o.shipping_service,
-  o.estimated_delivery_at,
-  o.delivered_at
+  user_id,
+  order_id,
+  created_at as order_date,
+  order_total,
+  tracking_id,
+  shipping_service,
+  estimated_delivery_at,
+  delivered_at
     
 from {{ ref('stg_postgres__orders') }}

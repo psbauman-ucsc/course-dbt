@@ -6,7 +6,6 @@ models:
     description: 'flattens checkout events, package_shipped events, and orders'
     columns:
       - name: user_id
-      - name: session_id
       - name: order_id
       - name: checkout_date
       - name: checkout_hour

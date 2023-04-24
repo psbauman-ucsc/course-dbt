@@ -16,4 +16,4 @@ select
   page_url  
 
 from {{ ref('stg_postgres__events') }}
-where event_type = 'package_shipped')
+where event_type = 'package_shipped'
