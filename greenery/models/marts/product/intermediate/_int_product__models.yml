@@ -3,7 +3,7 @@ version: 2
 models:
 
   - name: int_product__events
-    description: 'Expanded events table with order & user data'
+    description: Expanded events table with order & user data
     columns:
       - name: event_id
       - name: user_id
@@ -21,7 +21,7 @@ models:
       - name: delivered_at
       
   - name: int_product__events_page_view
-    description: 'Page view events'
+    description: Page view events
       - name: event_id
       - name: user_id
       - name: session_id
@@ -29,7 +29,7 @@ models:
       - name: product_id
 
   - name: int_product__events_checkout
-    description: 'Checkout events'
+    description: Checkout events
       - name: event_id
       - name: user_id
       - name: session_id
