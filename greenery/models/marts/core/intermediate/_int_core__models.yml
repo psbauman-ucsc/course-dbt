@@ -1,0 +1,40 @@
+version: 2
+
+models:
+
+  - name: int_core__events_checkout
+    description: Checkout events
+    columns:
+      - name: event_id
+      - name: user_id
+      - name: session_id
+      - name: order_id
+      - name: created_date
+      - name: created_hour
+      - name: page_url
+
+  - name: int_core__events_shipped
+    description: Ship events
+    columns:
+
+      - name: event_id
+      - name: user_id
+      - name: session_id
+      - name: order_id
+      - name: created_date
+      - name: created_hour
+      - name: page_url
+  
+  - name: int_core__orders
+    description: Orders
+    columns:
+
+      - name: user_id
+      - name: session_id
+      - name: order_id
+      - name: order_date
+      - name: order_total
+      - name: tracking_id
+      - name: shipping_service
+      - name: estimated_delivery_at
+      - name: delivered_at

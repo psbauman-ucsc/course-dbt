@@ -2,8 +2,8 @@ version: 2
 
 models:
 
-  - name: f_orders
-    description: 'Sessions data mart, flattening page views, orders placed, and orders shipped/delivered'
+  - name: f_page_views
+    description: 'Page views'
     columns:
       - name: user_id
       - name: session_id
@@ -12,17 +12,4 @@ models:
       - name: page_view_date
       - name: page_view_hour
       - name: page_view_url
-      - name: checkout_date
-      - name: checkout_hour
-      - name: checkout_url
-      - name: checkout_order_total
-      - name: shipping_date
-      - name: shipping_hour
-      - name: shipping_url  
-      - name: shipping_country
-      - name: shipping_state
-      - name: shipping_zip_code
-      - name: tracking_id
-      - name: shipping_service
-      - name: estimated_delivery_at
-      - name: delivered_at
+      - name: order_total

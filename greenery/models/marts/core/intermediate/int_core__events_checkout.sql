@@ -11,12 +11,9 @@ select
   user_id,
   session_id,
   order_id,
-  product_id,
-  event_type,
   created_date,
   created_hour,
-  page_url,
-  order_total
+  page_url
  
-from {{ ref('int_product__events') }}
+from {{ ref('stg_postgres__events') }}
 where event_type = 'checkout'

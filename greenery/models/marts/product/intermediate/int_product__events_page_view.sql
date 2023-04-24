@@ -12,9 +12,8 @@ select
   session_id,
   order_id,
   product_id,
-  event_type,
-  created_date,
-  created_hour,
+  created_date as page_view_date,
+  created_hour as page_view_hour,
   page_url
 
 from {{ ref('int_product__events') }}
