@@ -6,11 +6,11 @@
   )
 }}
 
-select
+select distinct
 
   v.user_id,
   v.session_id,
-  v.order_id,
+  vo.order_id,
   v.product_id,
   v.page_view_date,
   v.page_view_hour,
@@ -19,5 +19,10 @@ select
 
 from {{ ref('int_product__events_page_view') }} as v
 
-left join {{ ref('int_product__orders') }} as o
- on v.order_id = o.order_id
+left outer join {{ ref('int_product__events') }} as vo
+ on vo.user_id = v.user_id
+ and vo.session_id = v.session_id
+ and vo.order_id is not null
+
+left outer join {{ ref('int_product__orders') }} as o
+ on o.order_id = vo.order_id
