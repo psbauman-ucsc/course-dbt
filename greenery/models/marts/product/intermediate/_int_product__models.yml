@@ -11,7 +11,6 @@ models:
       - name: order_id
       - name: product_id
       - name: event_type
-      - name: event_at
       - name: page_url  
       - name: country
       - name: state
@@ -20,6 +19,19 @@ models:
       - name: shipping_service
       - name: estimated_delivery_at
       - name: delivered_at
-      - name: estimated_days
-      - name: delivery_days
       
+  - name: int_product__events_page_view
+    description: 'Page view events'
+      - name: event_id
+      - name: user_id
+      - name: session_id
+      - name: order_id
+      - name: product_id
+
+  - name: int_product__events_checkout
+    description: 'Checkout events'
+      - name: event_id
+      - name: user_id
+      - name: session_id
+      - name: order_id
+      - name: product_id

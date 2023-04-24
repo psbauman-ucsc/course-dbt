@@ -21,7 +21,10 @@ models:
       - name: page_url
         tests:
           - not_null
-      - name: created_at
+      - name: created_date
+        tests:
+          - not_null
+      - name: created_hour
         tests:
           - not_null
       - name: event_type

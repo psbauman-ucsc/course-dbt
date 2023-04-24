@@ -1,0 +1,6 @@
+version: 2
+
+models:
+
+  - name: f_orders
+    description: 'Sessions data mart, flattening page views, orders placed, and orders shipped/delivered'

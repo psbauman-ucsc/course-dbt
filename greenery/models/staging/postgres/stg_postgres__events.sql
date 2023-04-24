@@ -9,7 +9,8 @@ SELECT
     session_id,
     user_id,
     page_url,
-    created_at,
+    to_char(created_at, 'mm/dd/YYYY') AS created_date
+    to_char(created_at, 'hh') AS created_hour
     event_type,
     order_id,
     product_id
