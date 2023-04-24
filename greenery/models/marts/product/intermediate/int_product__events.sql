@@ -12,6 +12,8 @@ select
   e.order_id,
   e.product_id,
   e.event_type,
+  e.created_date
+  e.created_hour
   e.page_url,  
   u.country,
   u.state,
