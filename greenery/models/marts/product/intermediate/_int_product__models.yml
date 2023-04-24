@@ -22,6 +22,7 @@ models:
       
   - name: int_product__events_page_view
     description: Page view events
+    columns:
       - name: event_id
       - name: user_id
       - name: session_id
@@ -30,6 +31,7 @@ models:
 
   - name: int_product__events_checkout
     description: Checkout events
+    columns:
       - name: event_id
       - name: user_id
       - name: session_id
