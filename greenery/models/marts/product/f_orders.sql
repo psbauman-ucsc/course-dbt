@@ -5,7 +5,7 @@
   )
 }}
 
-select
+select distinct
 
   v.user_id,
   v.session_id,
@@ -29,14 +29,16 @@ select
   s.estimated_delivery_at,
   s.delivered_at
 
-from {{ ref('int_product__events_page_view') }} as v
+from {{ ref('int_product__events') }} as e
+
+left join {{ ref('int_product__events_page_view') }} as v
+ on v.user_id = e.user_id
+ and v.session_id = e.session_id
 
 left outer join {{ ref('int_product__events_checkout') }} as c
- on c.user_id = v.user_id
-and c.session_id = v.session_id
-and c.order_id = v.order_id
+ on c.user_id = e.user_id
+and c.session_id = e.session_id
 
 left outer join {{ ref('int_product__events_shipped') }} as s
- on s.user_id = v.user_id
-and s.session_id = v.session_id
-and s.order_id = v.order_id
+ on s.user_id = e.user_id
+and s.session_id = e.session_id
