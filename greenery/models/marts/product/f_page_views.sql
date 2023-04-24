@@ -2,7 +2,7 @@
 {{
   config(
     enabled=true,
-    materialized='view'
+    materialized='table'
   )
 }}
 
