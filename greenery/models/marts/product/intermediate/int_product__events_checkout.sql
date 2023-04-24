@@ -7,18 +7,16 @@
 
 select
 
-  e.event_id,
-  e.user_id,
-  e.session_id,
-  e.order_id,
-  e.product_id,
-  e.event_type,
-  e.created_date,
-  e.created_hour,
-  e.page_url,
-  o.order_total
+  event_id,
+  user_id,
+  session_id,
+  order_id,
+  product_id,
+  event_type,
+  created_date,
+  created_hour,
+  page_url,
+  order_total
  
-from {{ ref('int_postgres__events') }} as e
-left join {{ ref('stg_postgres__orders') }} as o
-  on e.order_id = o.order_id
+from {{ ref('int_product__events') }}
 where event_type = 'checkout'

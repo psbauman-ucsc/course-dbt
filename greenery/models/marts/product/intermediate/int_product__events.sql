@@ -21,6 +21,7 @@ select
   o.tracking_id,
   o.shipping_service,
   o.estimated_delivery_at,
+  o.order_total,
   o.delivered_at
     
 from {{ ref('stg_postgres__events') }} as e

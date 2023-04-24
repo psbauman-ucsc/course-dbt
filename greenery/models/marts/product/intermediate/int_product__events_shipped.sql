@@ -16,6 +16,7 @@ select
   created_date
   created_hour
   page_url,  
+  order_total,
   country,
   state,
   zip_code,
@@ -24,5 +25,5 @@ select
   estimated_delivery_at,
   delivered_at
 
-from {{ ref('int_postgres__events') }}
+from {{ ref('int_product__events') }}
 where event_type in ('package_shipped')

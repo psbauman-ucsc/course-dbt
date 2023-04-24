@@ -29,14 +29,14 @@ select
   s.estimated_delivery_at,
   s.delivered_at
 
-from {{ ref('int_postgres__events_page_views') }} as v
+from {{ ref('int_product__events_page_views') }} as v
 
-right outer join {{ ref('int_postgres__events_checkout') }} as c
+right outer join {{ ref('int_product__events_checkout') }} as c
  on c.user_id = v.user_id
 and c.session_id = v.session_id
 and c.order_id = v.order_id
 
-right outer join {{ ref('int_postgres__events_shipped') }} as s
+right outer join {{ ref('int_product__events_shipped') }} as s
  on s.user_id = v.user_id
 and s.session_id = v.session_id
 and s.order_id = v.order_id

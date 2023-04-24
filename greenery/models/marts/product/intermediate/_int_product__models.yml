@@ -61,7 +61,8 @@ models:
       - name: event_type
       - name: created_date
       - name: created_hour
-      - name: page_url 
+      - name: page_url
+      - name: order_total
       - name: country
       - name: state
       - name: zip_code
