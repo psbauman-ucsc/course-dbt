@@ -13,8 +13,8 @@ select
   order_id,
   product_id,
   event_type,
-  created_date
-  created_hour
+  created_date,
+  created_hour,
   page_url,  
   order_total,
   country,

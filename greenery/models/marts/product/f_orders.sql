@@ -29,7 +29,7 @@ select
   s.estimated_delivery_at,
   s.delivered_at
 
-from {{ ref('int_product__events_page_views') }} as v
+from {{ ref('int_product__events_page_view') }} as v
 
 right outer join {{ ref('int_product__events_checkout') }} as c
  on c.user_id = v.user_id
