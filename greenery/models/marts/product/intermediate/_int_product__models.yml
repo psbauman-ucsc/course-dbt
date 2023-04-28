@@ -42,7 +42,8 @@ models:
 
   - name: int_product__checkouts
     description: Checkout transaction events
-
+    columns:
+      
       - name: session_id
       - name: product_id
       - name: product_name
