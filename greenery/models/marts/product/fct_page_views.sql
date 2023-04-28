@@ -17,7 +17,7 @@ select distinct
   v.page_url,
   o.order_total
 
-from {{ ref('int_product__events_page_view') }} as v
+from {{ ref('int_product__page_views') }} as v
 
 left outer join {{ ref('int_product__events') }} as vo
  on vo.user_id = v.user_id
