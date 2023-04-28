@@ -2,7 +2,7 @@ version: 2
 
 models:
 
-  - name: fct_orders
+  - name: fct_core__orders
     description: 'flattens checkout events, package_shipped events, and orders'
     columns:
       - name: order_id
