@@ -18,7 +18,7 @@ models:
       - name: state
       - name: zip_code
       
-  - name: int_product__page_views
+  - name: int_product__views
     description: Page view events
     columns:
       - name: event_id
@@ -26,9 +26,9 @@ models:
       - name: session_id
       - name: order_id
       - name: product_id
-      - name: page_view_date
-      - name: page_view_hour
-      - name: page_url
+      - name: view_date
+      - name: view_hour
+      - name: view_url
 
   - name: int_product__orders
     description: Orders
