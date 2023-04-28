@@ -2,14 +2,21 @@ version: 2
 
 models:
 
-  - name: fct_page_views
-    description: 'Page views'
+  - name: dim_product__conversion
+    description: 'Conversion rates by product'
+    columns:
+      - name: product_id
+      - name: product_name
+      - name: conversion_rate
+
+  - name: fct_product__views
+    description: 'Product views and orders by user'
     columns:
       - name: user_id
-      - name: session_id
-      - name: order_id
       - name: product_id
-      - name: page_view_date
-      - name: page_view_hour
-      - name: page_view_url
-      - name: order_total
+      - name: view_date
+      - name: view_hour
+      - name: view_url
+      - name: order_id
+      - name: order_date
+      - name: order_quantity
