@@ -5,20 +5,19 @@
   )
 }}
 
+
 select distinct
 
   e.session_id,
-  eo.product_id,
+  oi.product_id,
   p.name as product_name
 
 from {{ ref('stg_postgres__events') }} as e
 
-left join {{ ref('stg_postgres__products')}} as p
-on p.product_id = eo.product_id
+left join {{ ref('stg_postgres__order_items') }} as oi
+ on oi.order_id = e.order_id
 
-left join {{ ref('stg_postgres__events') }} as eo
- on eo.user_id = e.user_id
- and eo.session_id = e.session_id
- and eo.order_id is not null
+left join {{ ref('stg_postgres__products') }} as p
+on p.product_id = oi.product_id
 
 where e.event_type = 'checkout'
