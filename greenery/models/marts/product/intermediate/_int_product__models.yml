@@ -18,7 +18,7 @@ models:
       - name: state
       - name: zip_code
       
-  - name: int_product__events_page_view
+  - name: int_product__page_views
     description: Page view events
     columns:
       - name: event_id
@@ -40,3 +40,9 @@ models:
       - name: order_total
       - name: status
 
+  - name: int_product__checkouts
+    description: Checkout transaction events
+
+      - name: session_id
+      - name: product_id
+      - name: product_name

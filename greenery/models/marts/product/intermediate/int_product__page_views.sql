@@ -16,5 +16,5 @@ select
   created_hour as page_view_hour,
   page_url
 
-from {{ ref('int_product__events') }}
+from {{ ref('stg_postgres__events') }}
 where event_type = 'page_view'

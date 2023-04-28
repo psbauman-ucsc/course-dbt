@@ -2,17 +2,14 @@ version: 2
 
 models:
 
-  - name: f_orders
+  - name: fct_orders
     description: 'flattens checkout events, package_shipped events, and orders'
     columns:
-      - name: user_id
       - name: order_id
       - name: checkout_date
       - name: checkout_hour
-      - name: checkout_url
       - name: shipping_date
       - name: shipping_hour
-      - name: shipping_url
       - name: order_date
       - name: order_total
       - name: tracking_id

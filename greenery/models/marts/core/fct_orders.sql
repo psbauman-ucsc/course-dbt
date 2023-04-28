@@ -7,14 +7,11 @@
 
 select
 
-  o.user_id,
   o.order_id,
   c.created_date as checkout_date,
   c.created_hour as checkout_hour,
-  c.page_url as checkout_url,
   s.created_date as shipping_date,
   s.created_hour as shipping_hour,
-  s.page_url as shipping_url,
   o.order_date,
   o.order_total,
   o.tracking_id,

@@ -2,7 +2,7 @@ version: 2
 
 models:
 
-  - name: f_page_views
+  - name: fct_page_views
     description: 'Page views'
     columns:
       - name: user_id
