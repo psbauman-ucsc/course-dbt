@@ -1,7 +1,7 @@
 {% macro events_per_type(table_name, type_column) %} 
 
     {% set event_types = dbt_utils.get_column_values(
-        table = {{ table_name }}
+        table = source( 'postgres', table_name )
         , column = {{ type_column }}
         )
     %}
