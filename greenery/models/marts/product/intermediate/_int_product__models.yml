@@ -53,7 +53,7 @@ models:
     columns:
       -name: user_id
       -name: session_id
-      {% for event_type in dbt_utils.get_column_values({{ source( 'postgres', 'events' ) }},'event_type') %}
-          -name: event_type
-      {% endfor %}
-
+      -name: checkout
+      -name: package_shipped
+      -name: add_to_cart
+      -name: page_view
