@@ -53,7 +53,7 @@ models:
     columns:
       -name: user_id
       -name: session_id
-      -name: checkout
-      -name: package_shipped
-      -name: add_to_cart
-      -name: page_view
+      -name: total_checkout
+      -name: total_package_shipped
+      -name: total_add_to_cart
+      -name: total_page_view
