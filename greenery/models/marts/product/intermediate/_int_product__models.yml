@@ -51,9 +51,10 @@ models:
   - name: int_product__session_types
     description: sessions by event_type
     columns:
-      -name: user_id
-      -name: session_id
-      -name: total_checkout
-      -name: total_package_shipped
-      -name: total_add_to_cart
-      -name: total_page_view
+
+      - name: user_id
+      - name: session_id
+      - name: total_checkout
+      - name: total_package_shipped
+      - name: total_add_to_cart
+      - name: total_page_view
