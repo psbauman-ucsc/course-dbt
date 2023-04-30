@@ -1,6 +1,6 @@
 ## What is our overall conversion rate?
 
-Raw query:
+**Raw query:**
 
 ```
 with sessions as (
@@ -19,9 +19,10 @@ round((p.checkout_sessions / s.total_sessions)*100,2) as global_conversion_rate
 from purchase_events as p, sessions as s
 ```
 
-Results:
+**Results:**
 
 62.46%
+
 
 ## What is our conversion rate by product?
 
@@ -56,7 +57,7 @@ where p.product_id = v.product_id
 Results:
 
 ```
-select product_name, conversion_rate from DEV_DB.DBT_PSBAUMANUCSCEDU.DIM_PRODUCT__CONVERSION;
+select product_name, conversion_rate from DEV_DB.DBT_PSBAUMANUCSCEDU.DIM_PRODUCT__CONVERSION order by 2;
 
 Pothos              34.43
 Angel Wings Begonia 39.34
@@ -90,3 +91,18 @@ Arrow Head          55.56
 String of pearls    60.94
 ```
 
+
+### Which products had their inventory change from week 2 to week 3? 
+
+```
+select distinct name from dev_db.dbt_psbaumanucscedu.products_snapshot where dbt_valid_to > to_date('2023-04-24');
+```
+
+Results:
+
+Pothos
+Philodendron
+Monstera
+String of pearls
+ZZ Plant
+Bamboo
