@@ -100,9 +100,11 @@ select distinct name from dev_db.dbt_psbaumanucscedu.products_snapshot where dbt
 
 Results:
 
+```
 Pothos
 Philodendron
 Monstera
 String of pearls
 ZZ Plant
 Bamboo
+```
