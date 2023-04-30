@@ -47,3 +47,13 @@ models:
       - name: session_id
       - name: product_id
       - name: product_name
+
+  - name: int_product__session_types
+    description: sessions by event_type
+    columns:
+      -name: user_id
+      -name: session_id
+      {% for event_type in dbt_utils.get_column_values({{ source( 'postgres', 'events' ) }},'event_type') %}
+          -name: event_type
+      {% endfor %}
+
