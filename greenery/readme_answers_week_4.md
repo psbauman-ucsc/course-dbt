@@ -45,11 +45,11 @@ order by 1
 ### Results:
 
 ```
-NAME				TOTAL_ROWS
-Monstera			4
-Philodendron		4
-Pothos				4
-String of pearls	4
+NAME.             TOTAL_ROWS
+Monstera          4
+Philodendron      4
+Pothos            4
+String of pearls  4
 ```
 
 
@@ -84,7 +84,7 @@ round((sum(total_add_to_cart) / sum(total_page_view))*100,2) as pct_funnel_view_
 from int_product__session_types
 ```
 
-While %52.7 funnel from a page view to adding inventory to their cart, only %19.29 of these views eventually funnel to a checkout. Funnel from cart to checkout is %36.61.
+While 52.7% of sessions funnel from a page view to adding inventory to their cart, only 19.29% of these views eventually funnel to a checkout. Funnel from cart to checkout is 36.61%.
 
 ## Which steps in the funnel have largest drop off points?
 
@@ -96,7 +96,7 @@ select
 from int_product__session_types
 ```
 
-The low conversion rate from cart to checkout causes a large dropoff from page view to checkout, which sits at %80.71
+The low conversion rate from cart to checkout causes a large dropoff from page view to checkout, which sits at 80.71%
 
 # 3A. dbt next steps for you
 
